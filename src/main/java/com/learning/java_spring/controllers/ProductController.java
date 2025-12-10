@@ -3,15 +3,19 @@ package com.learning.java_spring.controllers;
 import com.learning.java_spring.dto.Product.ProductRequest;
 import com.learning.java_spring.dto.Product.ProductResponse;
 import java.util.List;
-import com.learning.java_spring.services.Product.ProductService;
+import com.learning.java_spring.services.Product.ProductServiceImpl;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/products")
 @RequiredArgsConstructor
 public class ProductController {
-    private final ProductService service;
+
+    @Autowired
+    private ProductServiceImpl service;
     
     @PostMapping
     public ProductResponse create(@RequestBody ProductRequest req)

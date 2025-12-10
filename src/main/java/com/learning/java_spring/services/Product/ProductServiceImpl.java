@@ -12,11 +12,11 @@ import java.util.List;
 public class ProductServiceImpl implements ProductService {
     private final ProductRepository repo;
 
-    private ProductResponse mapToResponse(Product p){
+    private ProductResponse mapToResponse(Product product){
         ProductResponse res = new ProductResponse();
-        res.setId(p.getId());
-        res.setTitle(p.getTitle());
-        res.setPrice(p.getPrice());
+        res.setId(product.getId());
+        res.setTitle(product.getTitle());
+        res.setPrice(product.getPrice());
         return res;
     }
 
